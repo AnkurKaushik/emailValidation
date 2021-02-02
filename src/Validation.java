@@ -55,12 +55,6 @@ public class Validation {
         Scanner sc = new Scanner(System.in);
         String searchTerm = sc.next();
 
-        //first calls isValid to see if search is a valid email address
-        if(!isValid(searchTerm))
-        {
-            System.out.println("The provided search term is not a valid Email ID");
-            System.exit(0);
-        }
         //user asks for master list, print all elements in array
         if(searchTerm.toLowerCase().equals("master"))
         {
@@ -69,6 +63,14 @@ public class Validation {
                 System.out.println(master[i]);
             }
         }
+
+        //first calls isValid to see if search is a valid email address
+        if(!isValid(searchTerm))
+        {
+            System.out.println("The provided search term is not a valid Email ID");
+            System.exit(0);
+        }
+
         else //user typed an email id
         {
             if(search(emailID, searchTerm))
